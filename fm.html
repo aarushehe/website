@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FM Program Overview</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5faff;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #001f3f; /* Navy Blue */
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #FFD700; /* Golden */
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    .hero {
+      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: #c495a5da; /* or #FFFFFF */
+      color: #001f3f;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background-color: #FFD700;
+      color: #001f3f;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6c200;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #f1f1f1; /* Light background */
+      border: 1px solid #ccc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+/* Links Inside Dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;display: block;
+    }
+
+/* Hover to show dropdown */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Hover effect on dropdown items */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+/* Optional: Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+    }
+
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: goldenrod;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    table, th, td {
+      border: 1px solid #003366;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+
+    .highlight {
+      background-color: #f0f4ff;
+      border-left: 5px solid goldenrod;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+      <img src="final.png" alt="Explore NPV Logo" />
+      Explore NPV
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
+      <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
+      <li class="dropdown">
+        <button class="nav-btn dropbtn">Courses Offered</button>
+        <div class="dropdown-content">
+          <a href="cfa.html">CFA</a>
+          <a href="frm.html">FRM</a>
+          <a href="fm.html">FM</a>
+        </div>
+      </li>
+      <li><a href="ourcourses.html"><button class="nav-btn">Our Courses</button></a></li>
+      <li><a href="contact.html"><button class="nav-btn">Contact Us</button></a></li>
+    </ul>
+  </nav>
+
+<div class="container">
+  <h1>Financial Modelling Overview</h1>
+
+  <h2>🔍 What is Financial Modelling?</h2>
+  <h4>Financial Modelling is the process of creating a structured, mathematical representation of a real-world financial situation—typically built in Excel or other spreadsheet tools.</h4>
+  <h4>It involves forecasting a company’s financial performance using historical data, assumptions, and formulas to project future revenues, expenses, profits, cash flows, and more.</h4>
+  <p>In simpler terms: it’s like building a financial “simulator” for a business, used to make informed strategic and investment decisions.</p>
+
+  <h2>🧱 Key Components of a Financial Model</h2>
+  <ul>
+    <li>Income Statement (Profit & Loss)</li>
+    <li>Balance Sheet</li>
+    <li>Cash Flow Statement</li>
+    <li>Supporting schedules (e.g., depreciation, working capital)</li>
+    <li>Valuation techniques (Discounted Cash Flow, comparables)</li>
+    <li>Scenario & Sensitivity Analysis</li>
+  </ul>
+
+  <h2>💼 How Financial Modelling Helps in a Finance Career</h2>
+  <ul>
+    <li><strong>Decision-Making Tool:</strong> Helps companies evaluate the financial viability of projects (e.g., launching a new product, acquiring a company). Assists investors in determining whether to invest in a company.</li>
+    <li><strong>Crucial Skill Across Finance Roles:</strong> Applied in Investment Banking, Equity Research, Corporate Finance, Private Equity, and Venture Capital.</li>
+    <li><strong>Improves Financial Acumen:</strong> Enhances understanding of how financial statements are connected. Encourages analytical thinking and sharpens your ability to make data-driven decisions.</li>
+    <li><strong>Boosts Employability:</strong> Employers highly value candidates who can build or understand models, especially in roles that involve analysis, forecasting, or presenting business cases.</li>
+    <li><strong>Foundation for Certifications:</strong> Complements CFA, FRM, and MBA-level learning by applying theoretical knowledge in a practical way.</li>
+  </ul>
+
+  <h2>🌟 Why Learn Financial Modelling?</h2>
+  <ul>
+    <h4>Financial modelling is a core skill in the finance domain—it bridges the gap between theory and real-world decision-making, making it a powerful asset for any finance professional.</h4>
+  </ul>
+</div>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CFA Program Overview</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5faff;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #001f3f; /* Navy Blue */
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #FFD700; /* Golden */
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    .hero {
+      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: #c495a5da; /* or #FFFFFF */
+      color: #001f3f;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background-color: #FFD700;
+      color: #001f3f;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6c200;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #f1f1f1; /* Light background */
+      border: 1px solid #ccc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+/* Links Inside Dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;display: block;
+    }
+
+/* Hover to show dropdown */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Hover effect on dropdown items */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+/* Optional: Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: goldenrod;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    table, th, td {
+      border: 1px solid #003366;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+
+    .highlight {
+      background-color: #f0f4ff;
+      border-left: 5px solid goldenrod;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+      <img src="final.png" alt="Explore NPV Logo" />
+      Explore NPV
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
+      <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
+      <li class="dropdown">
+        <button class="nav-btn dropbtn">Courses Offered</button>
+        <div class="dropdown-content">
+          <a href="cfa.html">CFA</a>
+          <a href="frm.html">FRM</a>
+          <a href="fm.html">FM</a>
+        </div>
+      </li>
+      <li><a href="ourcourses.html"><button class="nav-btn">Our Courses</button></a></li>
+      <li><a href="contact.html"><button class="nav-btn">Contact Us</button></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>CFA Program Overview</h1>
+
+    <h2>📘 CFA Program Structure</h2>
+    <h4>The CFA Program consists of three levels:</h4>
+    <ul>
+      <li><strong>Level I:</strong> Focuses on foundational knowledge and understanding of investment tools and ethical standards.</li>
+      <li><strong>Level II:</strong> Emphasizes the application of concepts through complex case studies and analytical problem-solving.</li>
+      <li><strong>Level III:</strong> Integrates all concepts with a focus on portfolio management and applying knowledge to real-world scenarios.</li>
+    </ul>
+
+    <p><strong>Work Experience Requirement:</strong> To earn the CFA charter, candidates must complete at least 4,000 hours of relevant professional work experience, spread over a minimum of 36 months.</p>
+
+    <h2>🧪 Practical Skills Modules (PSMs)</h2>
+    <h4>To bridge the gap between theory and practice, CFA Institute now offers Practical Skills Modules, such as:</h4>
+    <ul>
+      <li>Financial Modeling</li>
+      <li>Python Programming</li>
+    </ul>
+    <h4>While these modules are not tested in exams, they are crucial for enhancing practical job-ready skills and will be a focus post-course.</h4>
+
+    <div class="highlight">
+      <h2>📆 CFA Level I Overview</h2>
+      <p><strong>Exam Frequency:</strong> February, May, August, November</p>
+      <p><strong>Fees:</strong></p>
+      <ul>
+        <li>One-time Enrollment: $350 (~₹30,000)</li>
+        <li>Early Registration: $990 (~₹84,000)</li>
+        <li>Standard Registration: $1,290 (~₹1,09,650)</li>
+      </ul>
+      <p><strong>Scholarships:</strong></p>
+      <ul>
+        <li>Student Scholarship: Available through over 900 affiliated colleges in India - reduces fees to around $600</li>
+        <li>Professor Scholarship</li>
+        <li>Access Scholarship: Most commonly used – further discussion available upon request</li>
+      </ul>
+      <p><strong>Exam Format:</strong> 180 MCQs across 2 sessions (2 hr 15 min each), no negative marking, each question has only one correct answer</p>
+    </div>
+
+    <h2>📊 CFA Level I Curriculum Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Session</th>
+          <th>Topic</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Ethics and Professional Standards</td><td>15–20%</td></tr>
+        <tr><td>1</td><td>Quantitative Methods</td><td>6–9%</td></tr>
+        <tr><td>1</td><td>Economics</td><td>6–9%</td></tr>
+        <tr><td>1</td><td>Financial Statement Analysis</td><td>11–14%</td></tr>
+        <tr><td>1</td><td>Corporate Issuers</td><td>6–9%</td></tr>
+        <tr><td>2</td><td>Equity Investments</td><td>11–14%</td></tr>
+        <tr><td>2</td><td>Fixed Income</td><td>11–14%</td></tr>
+        <tr><td>2</td><td>Derivatives</td><td>5–8%</td></tr>
+        <tr><td>2</td><td>Alternative Investments</td><td>7–10%</td></tr>
+        <tr><td>2</td><td>Portfolio Management</td><td>8–12%</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🌟 Why Pursue the CFA Program?</h2>
+    <ul>
+      <li>Gold Standard in Finance: The CFA designation is considered the gold standard for professionals aiming to build a career in investment management and financial analysis.</li>
+      <li>Global Recognition: Recognized across 160+ countries, the CFA charter’s global credibility is steadily increasing, including strong recognition in India.</li>
+      <li>Industry-Relevant & Adaptive: The CFA curriculum evolves regularly to reflect current trends and changes in the global financial landscape.</li>
+      <li>Conceptual Clarity: The course is built on understanding rather than rote learning. Success in the program comes from mastering concepts, not memorizing them.</li>
+      <li>Foundation for a Finance Career: The CFA Program provides a solid base for roles in asset management, investment banking, research, and more.</li>
+      <li>Versatile Career Opportunities: CFA charterholders work in mutual funds, hedge funds, trading firms, credit rating agencies, research companies, and portfolio management, among others.</li>
+      <li>Entrepreneurial Potential: The qualification is also beneficial for those looking to start their own practice in financial consulting, wealth advisory, or investment management.</li>
+      <li>Mobility with a Passport: Since exams are conducted globally, having a valid passport is necessary to register and appear for them.</li>

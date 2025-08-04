@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #001f3f; /* Navy Blue */
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #FFD700; /* Golden */
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    .hero {
+      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: #c495a5da; /* or #FFFFFF */
+      color: #001f3f;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background-color: #FFD700;
+      color: #001f3f;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6c200;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #f1f1f1; /* Light background */
+      border: 1px solid #ccc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+/* Links Inside Dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;display: block;
+    }
+
+/* Hover to show dropdown */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Hover effect on dropdown items */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+/* Optional: Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+    }
+
+    :root {
+            --navy-blue: #001f3f;
+            --gold: #FFD700;
+            --light-gold: #fff9c4;
+            --light-blue: #f5faff;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-blue);
+            color: var(--navy-blue);
+        }
+        
+        .course-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--navy-blue);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .course-category {
+            margin-bottom: 25px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .category-title {
+            background-color: var(--navy-blue);
+            color: var(--gold);
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .category-title:hover {
+            background-color: #002a52;
+        }
+        
+        .category-title::after {
+            content: '▼';
+            font-size: 14px;
+            color: var(--gold);
+            margin-left: -5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-title.active::after {
+            content: '▲';
+        }
+        
+        .levels-container {
+            display: none;
+            padding: 15px;
+            flex-direction: column; /* Changed to column for vertical layout */
+        }
+        
+        .level-title {
+            background-color: var(--gold);
+            color: var(--navy-blue);
+            position: relative;
+            padding: 12px 20px;
+            margin: 5px 0 15px 0; /* Reduced margin for tighter vertical spacing */
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
+            align-items: center;
+            transition: all 0.3s ease;
+            width: 100%; /* Full width for vertical layout */
+            margin-bottom: 15px;
+        }
+        
+        .level-title:hover {
+            background-color: #e6c200;
+        }
+        
+        .level-title::after {
+            content: '▼';
+            font-size: 12px;
+            color: var(--navy-blue);
+            margin-left: 10px;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+        }
+        
+        .level-title.active::after {
+            content: '▲';
+        }
+        
+        .boxes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+        
+        .box {
+            flex: 1;
+            width: calc(25% - 15px);
+            height: 550px;
+            min-width: 250px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .box-header {
+            background-color: var(--navy-blue);
+            color: var(--gold);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        .box-content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        
+        .box-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box-content li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+        }
+        
+        .box-content li::before {
+            content: '•';
+            color: var(--gold);
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .box-footer {
+            background-color: #f9f9f9;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+            margin-top: 5px;
+        }
+        
+        .month {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .level-title + .boxes-container {
+    display: none; /* Hide boxes by default */
+}
+        
+        /* Show containers when active */
+        .category-title.active + .levels-container,
+        .level-title.active + .boxes-container {
+            display: flex;
+        }
+
+        
+        @media (max-width: 1024px) {
+            .box {
+                width: calc(50% - 10px); /* 2 boxes per row on tablets */
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .box {
+                width: 100%; /* 1 box per row on mobile */
+                height: auto;
+                min-height: 550px;
+            }
+        }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="final.png" alt="Explore NPV Logo" />
+      Explore NPV
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
+      <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
+      <li class="dropdown">
+        <button class="nav-btn dropbtn">Courses Offered</button>
+        <div class="dropdown-content">
+          <a href="cfa.html">CFA</a>
+          <a href="frm.html">FRM</a>
+          <a href="fm.html">FM</a>
+        </div>
+      </li>
+
+      <li><a href="ourcourses.html"><button class="nav-btn">Our Courses</button></a></li>
+      <li><a href="contact.html"><button class="nav-btn">Contact Us</button></a></li>
+    </ul>
+  </nav>
+
+  <div class="course-container">
+        <h1>My Courses</h1>
+        
+        <!-- CFA Category -->
+        <div class="course-category">
+            <div class="category-title">CFA</div>
+            <div class="levels-container">
+                <!-- Level 1 -->
+                <div class="level-title">Level 1</div>
+            <div class="boxes-container">
+                <div class="box">
+                    <div class="box-header">February</div>
+                    <div class="box-content">
+                        <ul>
+                            <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                            <li>Exhaustive Study Material</li>
+                            <li>Chapter wise Question Bank with explanatory solutions</li>
+                            <li>Regular Mentoring Sessions</li>
+                            <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                            <li>Doubt Solving on Individual Basis</li>
+                            <li>Batch Strength - Max 10</li>
+                            <li>Placement Assistance</li>
+                            <li>FREE DEMO CLASSES available</li>
+                        </ul>
+                    </div>
+                    <div class="box-footer">
+                        <div class="month"></div>
+                        <div class="price">₹30,000</div>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <div class="box-header">May</div>
+                    <div class="box-content">
+                        <ul>
+                            <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                            <li>Exhaustive Study Material</li>
+                            <li>Chapter wise Question Bank with explanatory solutions</li>
+                            <li>Regular Mentoring Sessions</li>
+                            <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                            <li>Doubt Solving on Individual Basis</li>
+                            <li>Batch Strength - Max 10</li>
+                            <li>Placement Assistance</li>
+                            <li>FREE DEMO CLASSES available</li>
+                        </ul>
+                    </div>
+                    <div class="box-footer">
+                        <div class="month"></div>
+                        <div class="price">₹35,000</div>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <div class="box-header">August</div>
+                    <div class="box-content">
+                        <ul>
+                            <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                            <li>Exhaustive Study Material</li>
+                            <li>Chapter wise Question Bank with explanatory solutions</li>
+                            <li>Regular Mentoring Sessions</li>
+                            <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                            <li>Doubt Solving on Individual Basis</li>
+                            <li>Batch Strength - Max 10</li>
+                            <li>Placement Assistance</li>
+                            <li>FREE DEMO CLASSES available</li>
+                        </ul>
+                    </div>
+                    <div class="box-footer">
+                        <div class="month"></div>
+                        <div class="price">₹40,000</div>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <div class="box-header">November</div>
+                    <div class="box-content">
+                        <ul>
+                            <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                            <li>Exhaustive Study Material</li>
+                            <li>Chapter wise Question Bank with explanatory solutions</li>
+                            <li>Regular Mentoring Sessions</li>
+                            <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                            <li>Doubt Solving on Individual Basis</li>
+                            <li>Batch Strength - Max 10</li>
+                            <li>Placement Assistance</li>
+                            <li>FREE DEMO CLASSES available</li>
+                        </ul>
+                    </div>
+                    <div class="box-footer">
+                        <div class="month"></div>
+                        <div class="price">₹45,000</div>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Level 2 -->
+                <div class="level-title">Level 2</div>
+                <div class="boxes-container">
+                    <div class="box">
+                        <div class="box-header">May</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹40,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">August</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹45,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">November</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹50,000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Level 3 -->
+                <div class="level-title">Level 3</div>
+                <div class="boxes-container">
+                    <div class="box">
+                        <div class="box-header">February</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹45,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">August</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹50,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FRM Category -->
+        <div class="course-category">
+            <div class="category-title">FRM</div>
+            <div class="levels-container">
+                <!-- Level 1 -->
+                <div class="level-title">Level 1</div>
+                <div class="boxes-container">
+                    <div class="box">
+                        <div class="box-header">May</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹25,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">August</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹30,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">November</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹35,000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Level 2 -->
+                <div class="level-title">Level 2</div>
+                <div class="boxes-container">
+                    <div class="box">
+                        <div class="box-header">May</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹30,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">August</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹35,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header">November</div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month"></div>
+                            <div class="price">₹40,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FM Category -->
+        <div class="course-category">
+            <div class="category-title">FM</div>
+            <div class="levels-container">
+                <div class="boxes-container">
+                    <div class="box">
+                        <div class="box-header"></div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month">3 Months</div>
+                            <div class="price">₹15,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header"></div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month">4 Months</div>
+                            <div class="price">₹17,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="box-header"></div>
+                        <div class="box-content">
+                            <ul>
+                                <li>Classes under the expert guidance of Vanshika Agarwal (CFA, CFP) with 4+ years of teaching experience</li>
+                                <li>Exhaustive Study Material</li>
+                                <li>Chapter wise Question Bank with explanatory solutions</li>
+                                <li>Regular Mentoring Sessions</li>
+                                <li>Regular OFFLINE Classes with Chapter Wise Tests and Full Length Tests</li>
+                                <li>Doubt Solving on Individual Basis</li>
+                                <li>Batch Strength - Max 10</li>
+                                <li>Placement Assistance</li>
+                                <li>FREE DEMO CLASSES available</li>
+                            </ul>
+                        </div>
+                        <div class="box-footer">
+                            <div class="month">6 Months</div>
+                            <div class="price">₹20,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle category dropdown
+        document.querySelectorAll('.category-title').forEach(title => {
+            title.addEventListener('click', () => {
+                title.classList.toggle('active');
+            });
+        });
+        
+        // Toggle level dropdown
+        document.querySelectorAll('.level-title').forEach(title => {
+    title.addEventListener('click', () => {
+        title.classList.toggle('active');
+        // Get the next element sibling (boxes-container)
+        const boxesContainer = title.nextElementSibling;
+        // Toggle display based on active class
+        boxesContainer.style.display = title.classList.contains('active') ? 'flex' : 'none';
+    });
+});
+    </script>
+</body>
+</html>
+</body>
+</html>

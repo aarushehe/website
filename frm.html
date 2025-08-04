@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRM Program Overview</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5faff;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #001f3f; /* Navy Blue */
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #FFD700; /* Golden */
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    .hero {
+      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: #c495a5da; /* or #FFFFFF */
+      color: #001f3f;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background-color: #FFD700;
+      color: #001f3f;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6c200;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #f1f1f1; /* Light background */
+      border: 1px solid #ccc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+/* Links Inside Dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;display: block;
+    }
+
+/* Hover to show dropdown */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Hover effect on dropdown items */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+/* Optional: Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      color: goldenrod;
+      margin-top: 2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    table, th, td {
+      border: 1px solid #003366;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+
+    .highlight {
+      background-color: #f0f4ff;
+      border-left: 5px solid goldenrod;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+      <img src="final.png" alt="Explore NPV Logo" />
+      Explore NPV
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
+      <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
+      <li class="dropdown">
+        <button class="nav-btn dropbtn">Courses Offered</button>
+        <div class="dropdown-content">
+          <a href="cfa.html">CFA</a>
+          <a href="frm.html">FRM</a>
+          <a href="fm.html">FM</a>
+        </div>
+      </li>
+      <li><a href="ourcourses.html"><button class="nav-btn">Our Courses</button></a></li>
+      <li><a href="contact.html"><button class="nav-btn">Contact Us</button></a></li>
+    </ul>
+  </nav>
+
+<div class="container">
+  <h1>FRM Program Overview</h1>
+
+  <h2>🔍 What is FRM All About?</h2>
+  <h4>FRM stands for Financial Risk Manager, a globally recognized certification awarded by the Global Association of Risk Professionals (GARP). It is considered the gold standard for professionals working in risk management, investment management, corporate finance, and banking.</h4>
+  <h4>The FRM program focuses on identifying, analyzing, and managing risk across various areas of finance. It covers:</h4>
+  <ul>
+    <li>Quantitative Analysis</li>
+    <li>Financial Markets & Products</li>
+    <li>Valuation & Risk Models</li>
+    <li>Credit, Market, and Operational Risk</li>
+    <li>Liquidity & Treasury Risk</li>
+    <li>Risk Management in Investment Management</li>
+    <li>Current Issues in Financial Markets</li>
+  </ul>
+  <p>The FRM program is divided into two parts and typically takes 1–1.5 years to complete.</p>
+
+  <h2>💼 How FRM Helps in a Finance Career</h2>
+  <ul>
+    <li><strong>Specializes Your Profile in Risk Management:</strong> Companies need professionals who can manage financial risk, not just generate returns. FRM helps you assess credit risk, market volatility, interest rate changes, and operational failures.</li>
+    <li><strong>High Demand Across Industries:</strong> Especially valued in banks, investment firms, credit rating agencies, insurance companies, and regulatory bodies (e.g., RBI, SEBI).</li>
+    <li><strong>Roles You Can Target:</strong> Risk Analyst, Credit Risk Manager, Market Risk Manager, Risk Consultant, Chief Risk Officer (with experience), Regulatory or Compliance Analyst.</li>
+    <li><strong>Complementary to CFA/MBA:</strong> CFA is broader (investment focus), while FRM goes deeper into risk. Holding both gives a strong edge in finance careers.</li>
+    <li><strong>Global Recognition:</strong> Accepted in 190+ countries and highly preferred by global banks and consulting firms.</li>
+    <li><strong>Prepares You for Real-World Financial Crises:</strong> Understand how to respond to situations like the 2008 financial crash and COVID-era volatility.</li>
+  </ul>
+
+  <div class="highlight">
+    <h2>📆 FRM Exam Overview</h2>
+    <p><strong>Exam Frequency:</strong> May, August, and November</p>
+    <p><strong>Fees:</strong></p>
+    <ul>
+      <li>Enrollment (One-time): $400 (~₹33,000)</li>
+      <li>Early Registration: $600 (~₹49,000)</li>
+      <li>Standard Registration: $800 (~₹66,000)</li>
+    </ul>
+    <p><strong>Exam Format:</strong></p>
+    <ul>
+      <li><strong>Part I:</strong> 100 multiple-choice questions (4 hours)</li>
+      <li><strong>Part II:</strong> 80 multiple-choice questions (4 hours)</li>
+    </ul>
+    <p>Both exams are computer-based and focus on practical, real-world risk management applications.</p>
+    <p><strong>Professional Experience Requirement:</strong> Submit two years of full-time relevant work experience within 10 years of passing FRM Part II. This can be accrued before or after taking the exam.</p>
+  </div>
+
+  <h2>📚 FRM Curriculum Breakdown</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Part</th>
+        <th>Topic</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>I</td><td>Foundations of Risk Management</td><td>Basic principles and role of risk management in finance</td></tr>
+      <tr><td>I</td><td>Quantitative Analysis</td><td>Statistical methods and tools for risk modeling</td></tr>
+      <tr><td>I</td><td>Financial Markets and Products</td><td>Overview of instruments used in risk management</td></tr>
+      <tr><td>I</td><td>Valuation and Risk Models</td><td>Valuation techniques and measuring risk</td></tr>
+      <tr><td>II</td><td>Market Risk Measurement and Management</td><td>Risk related to fluctuations in market prices</td></tr>
+      <tr><td>II</td><td>Credit Risk Measurement and Management</td><td>Risk of default by borrowers and counterparties</td></tr>
+      <tr><td>II</td><td>Operational Risk and Resilience</td><td>Managing failures in internal processes or systems</td></tr>
+      <tr><td>II</td><td>Liquidity and Treasury Risk Measurement and Management</td><td>Short-term funding and liquidity risks</td></tr>
+      <tr><td>II</td><td>Risk Management and Investment Management</td><td>Application of risk tools in portfolio management</td></tr>
+      <tr><td>II</td><td>Current Issues in Financial Markets</td><td>Emerging trends and challenges in global finance</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🌟 Why Pursue the FRM Certification?</h2>
+  <ul>
+    <li>Industry-Respected Credential: Demonstrates deep expertise in managing financial risk.</li>
+    <li>Career Growth: Opens doors to high-level roles in finance, especially in risk-sensitive domains.</li>
+    <li>Practical & Applied: Curriculum focuses on real-world financial challenges.</li>
+    <li>Cost-Effective: More affordable than an MBA while providing strong ROI.</li>
+    <li>Recognition by Employers: Preferred by banks, consulting firms, and regulatory bodies.</li>
+    <li>Flexible Timeline: Self-paced learning and convenient exam windows.</li>
+    <li>Global Certification: Respected and accepted worldwide.</li>
+  </ul>
+</div>

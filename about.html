@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f6ff;
+      color: #002244;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #001f3f; /* Navy Blue */
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #FFD700; /* Golden */
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      background-color: transparent;
+      border: 2px solid #FFD700;
+      color: #FFD700;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    .hero {
+      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background-color: #c495a5da; /* or #FFFFFF */
+      color: #001f3f;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background-color: #FFD700;
+      color: #001f3f;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #e6c200;
+    }
+
+    /* Dropdown Container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #f1f1f1; /* Light background */
+      border: 1px solid #ccc;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+/* Links Inside Dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;display: block;
+    }
+
+/* Hover to show dropdown */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+/* Hover effect on dropdown items */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+/* Optional: Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;}
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      background-color: white;
+      margin: 120px auto 50px auto;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: bold;
+      color: #f97316;
+      margin-bottom: 25px;
+    }
+
+    .about-description p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* Mentor Block */
+    .mentor-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      max-width: 1000px;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .mentor-left{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .mentor-title{
+      font-size: 18px;
+      font-weight: bold;
+      color: #003366;
+      background-color: #ffd700;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .mentor-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .mentor-img{
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .mentor-image img {
+      width: 250px;
+      border-radius: 10px;
+      border: 4px solid #ffd700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .mentor-info {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .mentor-info h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .mentor-info h3 {
+      font-size: 18px;
+      color: #f97316;
+      margin-bottom: 15px;
+    }
+
+    .mentor-info p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    blockquote span {
+      color: #f97316;
+      font-weight: bold;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 18px;
+      background-color: #003366;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #002244;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="final.png" alt="Explore NPV Logo" />
+      Explore NPV
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
+      <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
+      <li class="dropdown">
+        <button class="nav-btn dropbtn">Courses Offered</button>
+        <div class="dropdown-content">
+          <a href="cfa.html">CFA</a>
+          <a href="frm.html">FRM</a>
+          <a href="fm.html">FM</a>
+        </div>
+      </li>
+
+      <li><a href="ourcourses.html"><button class="nav-btn">Our Courses</button></a></li>
+      <li><a href="contact.html"><button class="nav-btn">Contact Us</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="section-title">About Explore NPV</div>
+    <div class="about-description">
+      <p>At Explore NPV, we empower students and professionals to navigate and build successful career in finance. With over three years of experience, we’ve been dedicated to helping individuals identify their path and take confident steps toward their goals in the financial world.</p>
+      <p>Our guidance begins as early as high school, giving students a valuable head start in this competitive field. We offer comprehensive support for key finance programs such as CFA, FRM, and Financial Modelling. Beyond academic preparation, we also assist candidates with placements—especially those entering the corporate world for the first time.</p>
+      <p>Our mentorship extends beyond exam preparation, offering continuous support throughout the journey—from learning to launching a career.</p>
+    </div>
+
+    <div class="mentor-section">
+      <div class="mentor-left">
+        <h3 class = "mentor-title">Know Your Mentor</h3>
+        <img src="founderpicfinal.jpg" alt="Vanshika Agarwal" class="mentor-img"/>
+      </div>
+      <div class="mentor-info">
+        <h2>Vanshika Agarwal</h2>
+        <h3>Founder & Mentor</h3>
+        <p>Working as a finance educator, Vanshika Agarwal founded Explore NPV, where she guide students and professionals in carving out their path in the world of finance. As a CFA Charter-Holder and a Certified Financial Planner (CFP), her journey as a mentor began right after clearing Level I of the CFA program, when she discovered her passion for teaching and helping others navigate their own journey.</p>
+        <p>Having appeared for competitive MBA entrance exams like CAT, NMAT, and SNAP, she received admission offers from top B-schools such as IIM Kozhikode, NMIMS Mumbai and SIBM Pune. But her passion for Finance made boosted her to take the tough decision of quitting the admission offers from Top MBA Colleges and enter into the field of education.</p>
+        <p>With these principles in mind, she founded an education venture committed to laying the groundwork for successful career in finance through comprehensive training in programs like CFA, FRM, and Financial Modelling.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Explore NPV. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
