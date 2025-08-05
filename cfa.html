@@ -8,8 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f5faff;
       margin: 0;
+      padding: 0;
+      background-color: #FFFFFF; /* white */
+      color: #000000; /* black text */
       font-family: 'Poppins', sans-serif;
     }
 
@@ -19,6 +21,7 @@
       align-items: center;
       background-color: #001f3f; /* Navy Blue */
       padding: 1rem 2rem;
+      position: relative;
     }
 
     .logo {
@@ -38,8 +41,8 @@
       list-style: none;
       display: flex;
       gap: 1rem;
-      position: relative;
-      z-index: 100;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-btn {
@@ -51,6 +54,7 @@
       font-weight: 500;
       cursor: pointer;
       transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
     .nav-btn:hover {
@@ -59,7 +63,6 @@
     }
 
     .hero {
-      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
       height: 90vh;
       display: flex;
       align-items: center;
@@ -91,46 +94,70 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
     .cta-btn:hover {
       background-color: #e6c200;
     }
 
-    /* Dropdown Container */
+    /* Dropdown Container - FIXED */
     .dropdown {
       position: relative;
       display: inline-block;
     }
 
-/* Dropdown Content */
+    /* Dropdown Content - FIXED */
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 110%;
+      top: 100%; /* Changed from 110% */
       left: 0;
       background-color: #f1f1f1; /* Light background */
       border: 1px solid #ccc;
       min-width: 160px;
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 999;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
-/* Links Inside Dropdown */
+    /* Links Inside Dropdown */
     .dropdown-content a {
       color: black;
-      padding: 10px 14px;
-      text-decoration: none;display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
-/* Hover to show dropdown */
+    /* Hover to show dropdown */
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-/* Hover effect on dropdown items */
+    /* Hover effect on dropdown items */
     .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    /* Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Added for better dropdown visibility */
+    .dropdown-content a {
+      color: #001f3f;
+      font-weight: 500;
+    }
+    
+    .dropdown-content a:not(:last-child) {
+      border-bottom: 1px solid #ddd;
     }
 
 /* Optional: Button styling */
@@ -207,7 +234,7 @@
       <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
       <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
       <li class="dropdown">
-        <button class="nav-btn dropbtn">Courses Offered</button>
+        <button class="nav-btn dropbtn">Certifications</button>
         <div class="dropdown-content">
           <a href="cfa.html">CFA</a>
           <a href="frm.html">FRM</a>

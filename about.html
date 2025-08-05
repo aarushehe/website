@@ -9,18 +9,18 @@
     body {
       margin: 0;
       padding: 0;
+      background-color: #FFFFFF; /* white */
+      color: #000000; /* black text */
       font-family: 'Poppins', sans-serif;
-      background-color: #f0f6ff;
-      color: #002244;
     }
 
-    /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #001f3f; /* Navy Blue */
       padding: 1rem 2rem;
+      position: relative;
     }
 
     .logo {
@@ -40,8 +40,8 @@
       list-style: none;
       display: flex;
       gap: 1rem;
-      position: relative;
-      z-index: 100;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-btn {
@@ -53,6 +53,7 @@
       font-weight: 500;
       cursor: pointer;
       transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
     .nav-btn:hover {
@@ -61,7 +62,6 @@
     }
 
     .hero {
-      /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('finalimg.png') no-repeat center center/cover;*/
       height: 90vh;
       display: flex;
       align-items: center;
@@ -93,46 +93,70 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
     .cta-btn:hover {
       background-color: #e6c200;
     }
 
-    /* Dropdown Container */
+    /* Dropdown Container - FIXED */
     .dropdown {
       position: relative;
       display: inline-block;
     }
 
-/* Dropdown Content */
+    /* Dropdown Content - FIXED */
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 110%;
+      top: 100%; /* Changed from 110% */
       left: 0;
       background-color: #f1f1f1; /* Light background */
       border: 1px solid #ccc;
       min-width: 160px;
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 999;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
-/* Links Inside Dropdown */
+    /* Links Inside Dropdown */
     .dropdown-content a {
       color: black;
-      padding: 10px 14px;
-      text-decoration: none;display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+      font-family: 'Poppins', sans-serif;
     }
 
-/* Hover to show dropdown */
+    /* Hover to show dropdown */
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-/* Hover effect on dropdown items */
+    /* Hover effect on dropdown items */
     .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: #FFD700;
+      color: #001f3f;
+    }
+
+    /* Button styling */
+    .dropbtn {
+      background-color: inherit;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Added for better dropdown visibility */
+    .dropdown-content a {
+      color: #001f3f;
+      font-weight: 500;
+    }
+    
+    .dropdown-content a:not(:last-child) {
+      border-bottom: 1px solid #ddd;
     }
 
 /* Optional: Button styling */
@@ -290,7 +314,7 @@
       <li><a href="index.html"><button class="nav-btn">Home</button></a></li>
       <li><a href="about.html"><button class="nav-btn">About Us</button></a></li>
       <li class="dropdown">
-        <button class="nav-btn dropbtn">Courses Offered</button>
+        <button class="nav-btn dropbtn">Certifications</button>
         <div class="dropdown-content">
           <a href="cfa.html">CFA</a>
           <a href="frm.html">FRM</a>
@@ -307,22 +331,23 @@
   <div class="container">
     <div class="section-title">About Explore NPV</div>
     <div class="about-description">
-      <p>At Explore NPV, we empower students and professionals to navigate and build successful career in finance. With over three years of experience, we’ve been dedicated to helping individuals identify their path and take confident steps toward their goals in the financial world.</p>
-      <p>Our guidance begins as early as high school, giving students a valuable head start in this competitive field. We offer comprehensive support for key finance programs such as CFA, FRM, and Financial Modelling. Beyond academic preparation, we also assist candidates with placements—especially those entering the corporate world for the first time.</p>
+      <p>At Explore NPV, we empower students and professionals to navigate and build successful career in finance. With over four years of experience, we’ve been dedicated to helping individuals identify their path and take confident steps toward their goals in the financial world.</p>
+      <p>Our guidance begins as early as high school, giving students a valuable head start in this competitive field. We offer comprehensive support for key finance programs such as CFA, FRM and Financial Modelling. Beyond academic preparation, we also assist candidates with placements—especially freshers.</p>
       <p>Our mentorship extends beyond exam preparation, offering continuous support throughout the journey—from learning to launching a career.</p>
     </div>
+    
+    <div style="border-top: 2px solid #FFD700; margin: 30px 0;"></div>
 
     <div class="mentor-section">
       <div class="mentor-left">
-        <h3 class = "mentor-title">Know Your Mentor</h3>
         <img src="founderpicfinal.jpg" alt="Vanshika Agarwal" class="mentor-img"/>
       </div>
       <div class="mentor-info">
         <h2>Vanshika Agarwal</h2>
         <h3>Founder & Mentor</h3>
         <p>Working as a finance educator, Vanshika Agarwal founded Explore NPV, where she guide students and professionals in carving out their path in the world of finance. As a CFA Charter-Holder and a Certified Financial Planner (CFP), her journey as a mentor began right after clearing Level I of the CFA program, when she discovered her passion for teaching and helping others navigate their own journey.</p>
-        <p>Having appeared for competitive MBA entrance exams like CAT, NMAT, and SNAP, she received admission offers from top B-schools such as IIM Kozhikode, NMIMS Mumbai and SIBM Pune. But her passion for Finance made boosted her to take the tough decision of quitting the admission offers from Top MBA Colleges and enter into the field of education.</p>
-        <p>With these principles in mind, she founded an education venture committed to laying the groundwork for successful career in finance through comprehensive training in programs like CFA, FRM, and Financial Modelling.</p>
+        <p>Having appeared for competitive MBA entrance exams like CAT, NMAT, and SNAP, she received admission offers from top B-schools such as IIM Kozhikode, NMIMS Mumbai and SIBM Pune. But her passion for Finance boosted her to take the tough decision of rejecting the admission offers from Top MBA Colleges and continue in the field of education.</p>
+        <p>With these principles in mind, she is continuing to provide her guidance and services to the students and helping them in laying the groundwork for successful career in finance through comprehensive training in programs like CFA, FRM, and Financial Modelling.</p>
       </div>
     </div>
 
@@ -331,7 +356,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Explore NPV. All rights reserved.</p>
+    <p>&copy; 2021 Explore NPV. All rights reserved.</p>
   </footer>
 
 </body>
